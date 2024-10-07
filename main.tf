@@ -22,7 +22,7 @@ resource "aws_instance" "instance" {
   ami           = "aws_ami.ubuntu.id"
   instance_type = var.instance_type
 
-  tags {
+  tags = {
     Name = var.instance_name
 
   }
