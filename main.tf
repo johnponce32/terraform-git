@@ -1,4 +1,8 @@
 
+provider "aws" {
+  region = var.region
+}
+
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -16,6 +20,10 @@ data "aws_ami" "ubuntu" {
 }
 resource "aws_instance" "instance" {
   ami           = "aws_ami.ubuntu.id"
-  name          = var.instance_name
   instance_type = var.instance_type
+
+  tags {
+    Name = var.instance_name
+
+  }
 }
