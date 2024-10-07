@@ -1,4 +1,4 @@
-variable "instace_name" {
+variable "instance_name" {
   type    = string
   default = "My Instance"
 }
